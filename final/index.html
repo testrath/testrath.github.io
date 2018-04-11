@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>HTML Forms and Tables</title>
+	<link rel="stylesheet" type="text/css" href="styles/validation-styles.css">
+</head>
+<body>
+	<div class="wrapper">
+		<!-- HTML form tags -->
+		<section>
+			<h1>HTML forms</h1>
+			<!-- Form requires basic attributes to be valid 
+				the 'action' attr. is where the data goes after the user hits the submit button
+				the 'method' attr is how that page will get information transferred from your HTML document
+					1) "get" method - sends the information via query string (basically by adding the information at the end of your URL bar in browser)
+					2) "post" method - sends a encrypted message to the server with the submitted data
+			-->
+			<form id="htmlForm" action="somepage.php" method="get">
+				<div class="input-container required">
+					<!-- all form Fields must have a label associated with them, the for attribute of the label should match the id of the input element -->
+					<!-- When you click on the label, the form field becomes active -->
+					<label class="input-label label-text" for="firstName">First Name</label>
+					<!-- input element is used to create input boxes on your HTML page -->
+					<!-- type attribute is used to define what kind of input this specific input box is, various values are text, password etc. -->
+					<!-- All input elements require a name attribute, which is used by the server to interpret information that is being sent -->
+					<input type="text" name="firstName" id="firstName">
+					<p class="feedback"></p>
+				</div>
+
+				<div class="input-container required">
+					
+					<label class="input-label label-text" for="lastName">Last Name</label>
+					<input type="text" name="lastName" id="lastName">
+					<p class="feedback"></p>
+
+				</div>
+
+				<div class="input-container required">
+					<label class="input-label label-text" for="userEmail">Email</label>
+					<input type="email" name="userEmail" id="userEmail">
+					<p class="feedback"></p>
+
+				</div>
+
+				<div class="input-container required">
+					<label class="input-label label-text" for="pass">Password</label>
+					<!-- input type="password" creates input elements that can take sensitive information such as passwords, instead of seeing the actual text being inputted, the user will see dots -->
+					<input type="password" name="pass" id="pass">
+					<p class="feedback"></p>
+
+				</div>
+
+				<div class="input-container required">
+					<label class="input-label label-text" for="summary">Summary</label>
+					<!-- the text area is used to add content that is more than one line  -->
+					<!-- any text that is written between the opening and closing text area tags will show up in your rendered HTML, even if it is just space -->
+					<textarea name="summary" id="summary"></textarea>
+					<p class="feedback"></p>
+
+				</div>
+
+				<div class="input-container required">
+					<label class="input-label label-text" for="postal-code">Postal code</label>
+					<!-- placeholder holder attribute is used to give information to the users on certain formating of inputs, this text will disappear the moment users start typing -->
+					<input type="text" name="postal-code" id="postal-code" placeholder="A1A 1A1">
+					<p class="feedback"></p>
+
+				</div>
+
+				<div class="input-container required">
+					<label class="input-label label-text" for="country">Country</label>
+					<!-- value attribute is used to give a default value to your input elements -->
+					<!-- unlike the placehoder, this will stay intact untill the user actually changes or deletes it -->
+					<!-- placeholder can be used in conjugation with value -->
+					<input type="text" name="country" id="country" value="Canada" placeholder="add your country here">
+					<p class="feedback"></p>
+
+				</div>
+
+				<div class="input-container required">
+					<label  class="input-label" for="province">Province</label>
+					<!-- select element is used to create dropdown menus is HTML -->
+					<!-- TO define the options of your drop down, <option> tag is used -->
+					<!-- Note when the info. is submitted to the server, value of the option is submitted instead of the text -->
+					<select id="province" name="province">
+						<option value="ON">Ontario</option>
+						<option value="BC">British Columbia</option>
+						<option value="AB">Alberta</option>
+					</select>
+					<p class="feedback"></p>
+
+				</div>
+
+				<div class="input-container required-checkbox">
+					<h4 class="label-text">Subjects</h4>
+
+					<!-- Input type checkbox is used to define checkboxes on your document -->
+					<!-- The group of similar checkboxes will have the same name, but as always their ids will be unique -->
+					<!-- label for checkboxes is used to tell the user what to click on -->
+					<!-- Note when submitting to the server, value is submitted and not the label text -->
+					<!-- Multiple check boxes can be selected at the same time -->
+					<label for="math">
+						Maths
+						<input type="checkbox" name="subject" id="math" value="Maths">
+					</label>
+					<br>
+					<label for="history">
+						History
+						<input type="checkbox" name="subject" id="history" value="History">
+					</label>
+					
+					<p class="feedback"></p>
+					
+				</div>
+
+				<div class="input-container required-checkbox">
+					
+					<h4 class="label-text">Schools</h3>
+
+					<label for="algonquin">
+						Algonquin
+						<input type="checkbox" name="school" id="algonquin" value="Algonquin">
+					</label>
+
+					<label for="carleton">
+						Carelton
+						<input type="checkbox" name="school" id="carleton" name="carleton">
+					</label>
+
+					<p class="feedback"></p>
+				</div>
+
+				<div class="input-container">
+					<!-- input type radio is used to create radio buttons -->
+					<!-- unlike the checkboxes only one out the set can be selected at a time -->
+					<!-- they have same name attr. but different id -->
+					<!-- to have a default checked, "checked" attribute is used -->
+					<h3>Do you like forms?</h3>
+					<label for="yes">
+						Yes
+						<input type="radio" name="forms" id="yes" checked>
+
+					</label>
+					<br>
+					<label for="no">
+						No
+						<input type="radio" name="forms" id="no">
+					</label>
+					<p class="feedback"></p>
+					
+				</div>
+
+				<div>
+					<!-- button submit creates a submit button -->
+					<!-- this is what the user will click on to submit the form -->
+					<button type="submit" id="btn-submit">Submit</button>
+				</div>
+			</form>
+		</section>
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script type="text/javascript" src="scripts/js-validation.js"></script>
+</body>
+</html>
